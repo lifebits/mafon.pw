@@ -1,12 +1,14 @@
 'use strict';
 
-let webpack = require('webpack');
+let webpack = require('webpack'),
+    path = require('path'),
+    APP = path.join(__dirname, '/src');
 
 module.exports = {
 
-    context: __dirname + '/src',
+    context: APP,
 
-    entry:   {
+    entry: {
         app: './app'
     },
 
@@ -16,13 +18,13 @@ module.exports = {
     },
 
     module: {
-        loaders: [{
-            test:   /\.js$/,
-            loader: 'babel',
-            exclude: /node_modules/
-        }],
+        loaders: [
+            { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
+            { test: /\.html$/, loader: 'ng-cache?prefix=[dir]/[dir]' },
+            { test: /\.css$/, loader: "style-loader!css-loader" }
+        ],
         noParse: [
-            /[\/\\]node_modules[\/\\]angular[\/\\]angular\.js$/
+            /[\/\\]node_modules[\/\\]angular[\/\\]angular/
         ]
     }
 
