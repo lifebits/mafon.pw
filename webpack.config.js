@@ -1,6 +1,7 @@
 'use strict';
 
 let webpack = require('webpack'),
+    ExtractTextPlugin = require("extract-text-webpack-plugin"),
     path = require('path'),
     APP = path.join(__dirname, '/src');
 
@@ -14,6 +15,7 @@ module.exports = {
 
     output: {
         path: __dirname + '/public',
+        publicPath: '/public/',
         filename: '[name].js'
     },
 
@@ -21,11 +23,23 @@ module.exports = {
         loaders: [
             { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
             { test: /\.html$/, loader: 'ng-cache?prefix=[dir]/[dir]' },
-            { test: /\.css$/, loader: "style-loader!css-loader" }
+            //{ test: /\.css$/, loader: 'style-loader!css-loader'}
+            { test: /\.scss$/, loader: ExtractTextPlugin.extract("style", "css", "sass") },
+            { test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/, loader: 'file?name=[path][name].[ext]?[hash]' }
         ],
         noParse: [
-            /[\/\\]node_modules[\/\\]angular[\/\\]angular/
+            /[\/\\]node_modules[\/\\]angular[\/\\]angular/,
+            /[\/\\]node_modules[\/\\]angular-ui-router/
         ]
-    }
+    },
 
+    plugins: [
+        new ExtractTextPlugin("style.css")
+    ],
+
+    devtool: 'cheap-inline-module-source-map',
+
+    devServer: {
+        hot: true
+    }
 };

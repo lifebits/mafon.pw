@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import musicListTemplate from './views/music-list.html';
 

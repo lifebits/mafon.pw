@@ -1,6 +1,6 @@
 'use strict';
 
-import './index.css';
+import './index.scss';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
