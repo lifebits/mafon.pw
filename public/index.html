@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="cmp">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,15 +9,11 @@
 
     <script defer src="./app.js"></script>
 
-
 </head>
 <body>
-    Angular work: {{2+2==4}}
-    <br>
-    <br>
-
-    <section ui-view>
-
-    </section>
+    <main-navigator></main-navigator>
+    <ui-view>
+        //Content
+    </ui-view>
 </body>
 </html>

@@ -5,28 +5,18 @@ import './index.scss';
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
-import musicListTemplate from './views/music-list.html';
+const APP = angular.module('app.music', [uiRouter])
 
-const CMP = angular.module('cmp', ['ui.router']);
+    .config(function($stateProvider) {
+        $stateProvider
+            .state('music', {
+                url: '/music',
+                template: '<music-app/>'
+            });
+    })
 
+    .directive('musicApp', require('./musicAppDirective'))
 
-CMP.config(function($stateProvider, $urlRouterProvider) {
-    $stateProvider
-        .state('index', {
-            url: '',
-            template: ''
-        })
-        .state('music', {
-            url: '/music',
-            template: musicListTemplate
-        });
+    .name;
 
-    $urlRouterProvider.otherwise('music');
-});
-
-
-CMP.directive('musicList', require('./musicListDirective'));
-
-console.log(CMP);
-
-export default CMP;
+export default APP;

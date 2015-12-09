@@ -2,6 +2,7 @@
 
 let webpack = require('webpack'),
     ExtractTextPlugin = require("extract-text-webpack-plugin"),
+    //ngAnnotatePlugin = require('ng-annotate-webpack-plugin'),
     path = require('path'),
     APP = path.join(__dirname, '/src');
 
@@ -34,7 +35,12 @@ module.exports = {
     },
 
     plugins: [
-        new ExtractTextPlugin("style.css")
+        new ExtractTextPlugin("style.css"),
+        new webpack.optimize.DedupePlugin()/*,
+        new ngAnnotatePlugin({
+            add: true,
+            // other ng-annotate options here
+        })*/
     ],
 
     devtool: 'cheap-inline-module-source-map',
