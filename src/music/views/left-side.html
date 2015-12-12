@@ -3,7 +3,8 @@
 
     <nav class="main" data-name="main">
         <ul>
-            <li ng-repeat="navElement in LeftSide.navMainList">
+            <li ng-repeat="navElement in LeftSide.navMainList"
+                ui-sref="music.section({sectionId: 'day'})">
                 <a>
                     <span data-hover="{{::navElement.name}}">{{::navElement.name}}</span>
                 </a>

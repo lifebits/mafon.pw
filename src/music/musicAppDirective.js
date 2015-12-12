@@ -10,7 +10,7 @@ const musicApp = function() {
         template: musicAppTemplate,
         controllerAs: 'MusicApp',
         controller: function() {
-            console.log("aaa");
+
         }
     }
 };
