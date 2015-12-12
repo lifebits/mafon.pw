@@ -16,6 +16,10 @@ const APP = angular.module('app.music', [uiRouter])
     })
 
     .directive('musicApp', require('./musicAppDirective'))
+    .directive('leftSide', require('./leftSideDirective'))
+
+    .service('musicAppService', require('./musicAppService'))
+    .service('LeftSideService', require('./leftSideService'))
 
     .name;
 

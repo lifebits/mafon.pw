@@ -23,11 +23,14 @@
     "babel-loader": "^5.4.0",
     "css-loader": "^0.23.0",
     "extract-text-webpack-plugin": "^0.9.1",
+    "file-loader": "^0.8.5",
     "ng-annotate-webpack-plugin": "^0.1.2",
     "ng-cache-loader": "0.0.14",
     "node-sass": "^3.4.2",
+    "resolve-url-loader": "^1.4.3",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
     "webpack": "^1.12.9"
   }
 }

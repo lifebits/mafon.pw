@@ -7,7 +7,12 @@ export default function routing($stateProvider, $urlRouterProvider) {
             url: '',
             template: ''
         })
+        //Временный стейт
+        .state('humor', {
+            url: 'humor',
+            template: ''
+        });
 
-    $urlRouterProvider.otherwise('');
+    $urlRouterProvider.otherwise('music');
 
 }

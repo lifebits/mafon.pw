@@ -1,0 +1,11 @@
+<nav id="main-navigator">
+    <ul>
+        <li ng-repeat="navElement in MainNavigator.navMainList"
+            ui-sref-active="active">
+            <i></i>
+            <a ui-sref="{{::navElement.href}}">
+                {{::navElement.name}}
+            </a>
+        </li>
+    </ul>
+</nav>
