@@ -7,7 +7,7 @@ import uiRouter from 'angular-ui-router';
 
 import routing from './app.config';
 
-//import mainNav from './ui/main-navigator';
+//import mainNav from './ui/main-navigator'; надо переделать
 
 import musicApp from './music';
 
