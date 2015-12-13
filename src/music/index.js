@@ -15,13 +15,13 @@ const APP = angular.module('app.music', [uiRouter])
             })
             .state('music.section', {
                 url: '/:sectionId',
-                template: '<play-list/>'
+                template: '<music-board/>'
             });
     })
 
     .directive('musicApp', require('./musicAppDirective'))
     .directive('leftSide', require('./leftSideDirective'))
-    .directive('playList', require('./playListDirective'))
+    .directive('musicBoard', require('./musicBoardDirective'))
 
     .service('MusicAppService', require('./musicAppService'))
     .service('LeftSideService', require('./leftSideService'))

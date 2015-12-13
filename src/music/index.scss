@@ -15,7 +15,7 @@
     height: 100vh;
   }
 
-  .wrapper-playList {
+  .wrapper-musicBoard {
     position: relative;
     vertical-align: top;
     width: auto;
@@ -24,4 +24,4 @@
 }
 
 @import "./css/left-side";
-@import "./css/play-list";
+@import "css/music-board";

@@ -14,7 +14,7 @@ const musicAppService = function($http) {
     };
 
     let getJSONFromVK = () => {
-        return $http.jsonp('https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain=indie_music&count=20&offset=0&callback=JSON_CALLBACK')
+        return $http.jsonp('https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain=rock_music_on&count=20&offset=0&callback=JSON_CALLBACK')
             .then(
                 response => response
             )

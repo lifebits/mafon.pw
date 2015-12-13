@@ -7,25 +7,23 @@ const playList = function(){
         restrict: 'E',
         scope: {},
         template: playListTemplate,
-        controllerAs: 'PlayList',
+        controllerAs: 'MusicBoard',
         controller: function(MusicAppService) {
-            this.playList;
+            this.musicCard, this.musicList;
+
 
             MusicAppService.getPlayList()
                 .then(
                     result => {
-                        this.playList = result;
-                        console.dir(this.playList);
+                        let playList = result;
+                        this.musicCard = playList;
+                        this.musicList = playList
+
+                        console.dir(this.musicList);
                     }
                 );
 
-            /*var elem = document.querySelector('.grid');
-            console.log(elem);
-            var iso = new Isotope( elem, {
-                // options
-                itemSelector: '.item',
-                layoutMode: 'fitRows'
-            });*/
+
         }
     }
 };

@@ -1,8 +1,22 @@
-<section class="play-list">
-    <div class="grid js-isotope">
-        <div ng-repeat="item in PlayList.playList"
-             class="grid-item">
-            <span>{{::item.id}}</span>
-        </div>
-    </div>
+<section class="music-board">
+    <nav>
+
+    </nav>
+    <ul class="grid">
+        <li ng-repeat="item in MusicBoard.musicCard"
+            class="grid-item">
+            <div class="music-card">
+                <div class="music-card-img">
+                    <img src="">
+                </div>
+                <div class="music-card-list">
+                    <ul>
+                        <li></li>
+                    </ul>
+                </div>
+                <span>{{::item.id}}</span>
+            </div>
+
+        </li>
+    </ul>
 </section>
