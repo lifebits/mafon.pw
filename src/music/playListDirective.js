@@ -9,7 +9,23 @@ const playList = function(){
         template: playListTemplate,
         controllerAs: 'PlayList',
         controller: function(MusicAppService) {
-            MusicAppService.getPlayList();
+            this.playList;
+
+            MusicAppService.getPlayList()
+                .then(
+                    result => {
+                        this.playList = result;
+                        console.dir(this.playList);
+                    }
+                );
+
+            /*var elem = document.querySelector('.grid');
+            console.log(elem);
+            var iso = new Isotope( elem, {
+                // options
+                itemSelector: '.item',
+                layoutMode: 'fitRows'
+            });*/
         }
     }
 };

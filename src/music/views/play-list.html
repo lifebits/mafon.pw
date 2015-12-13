@@ -1,5 +1,8 @@
 <section class="play-list">
-    <div>
-        Test
+    <div class="grid js-isotope">
+        <div ng-repeat="item in PlayList.playList"
+             class="grid-item">
+            <span>{{::item.id}}</span>
+        </div>
     </div>
 </section>

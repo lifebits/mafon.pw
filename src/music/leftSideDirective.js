@@ -10,7 +10,7 @@ const leftSide = function() {
         controllerAs: 'LeftSide',
         controller: function(LeftSideService) {
             this.navMainList = LeftSideService.getNavMainList();
-            //console.log("LeftSide Init");
+            //console.log(this.navMainList);
         }
     }
 };
