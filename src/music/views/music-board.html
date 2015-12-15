@@ -1,0 +1,33 @@
+<section class="music-board">
+    <nav>
+
+    </nav>
+    <ul isotope-container class="grid">
+        <li isotope-item ng-repeat="card in MusicBoard.musicCard"
+            class="grid-item">
+            <div class="music-card">
+                <div class="music-card-img">
+                    <img src="">
+                </div>
+                <div class="music-card-list">
+                    <ul>
+                        <li ng-repeat="audio in card.audio">
+                            {{::audio.title}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<!--
+
+
+<ul>
+                    <li ng-repeat="attachments in item.attachments">
+                        {{::attachments.type}}
+                    </li>
+                </ul>
+           <span>{{::item.id}}</span>
+-->

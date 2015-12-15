@@ -14,10 +14,13 @@
       .grid-item {
         box-sizing: border-box; //времено, надо переписать на инхерит или добавить в ресет
         display: inline-block;
+        //float: left;
         position: relative;
+        vertical-align: top;
         width: 25%;
         min-height: 100px;
         padding: 0 5px;
+        padding-bottom: 5px;
         text-align: left;
         font-size: 14px;
         //background-color: #3c90be;

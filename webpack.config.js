@@ -26,7 +26,9 @@ module.exports = {
             { test: /\.html$/, loader: 'ng-cache?prefix=[dir]/[dir]' },
             //{ test: /\.css$/, loader: 'style-loader!css-loader'}
             { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!resolve-url!sass?sourceMap') },
-            { test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/, loader: 'file?name=[path][name].[ext]?[hash]' }
+            { test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/, loader: 'file?name=[path][name].[ext]?[hash]' },
+
+            {test: /isotope\-|fizzy\-ui\-utils|desandro\-|masonry|outlayer|get\-size|doc\-ready|eventie|eventemitter/, loader: 'imports?define=>false&this=>window'}
         ],
         noParse: [
             /[\/\\]node_modules[\/\\]angular[\/\\]angular/,
@@ -35,9 +37,9 @@ module.exports = {
     },
 
     plugins: [
-        new ExtractTextPlugin("style.css"),
-        /*new webpack.optimize.DedupePlugin(),
-        new ngAnnotatePlugin({
+        new ExtractTextPlugin("style.css")
+
+        /*new ngAnnotatePlugin({
             add: true,
             // other ng-annotate options here
         })*/

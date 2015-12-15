@@ -1,6 +1,6 @@
 'use strict';
 
-import playListTemplate from './views/play-list.html';
+import playListTemplate from './views/music-board.html';
 
 const playList = function(){
     return {
@@ -17,9 +17,9 @@ const playList = function(){
                     result => {
                         let playList = result;
                         this.musicCard = playList;
-                        this.musicList = playList
+                        //this.musicList = playList;
 
-                        console.dir(this.musicList);
+                        //console.dir(this.musicList);
                     }
                 );
 

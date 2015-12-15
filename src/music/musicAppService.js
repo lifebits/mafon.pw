@@ -6,8 +6,55 @@ const musicAppService = function($http) {
         let playList = getJSONFromVK()
             .then(
                 result => {
-                    //console.log(result.data.response.items);
-                    return result.data.response.items;
+                    let items = result.data.response.items;
+                    //console.dir(items);
+
+                    let newItems = [];
+                    //Отфильтровываем записи без attachments!
+                    /*items = items.filter(function(el) {
+                        return el['attachments'];
+                    })*/
+
+                    items.forEach(function(item) {
+                        let checkMusic = false;
+                        let newItem = {
+                            photo: [],
+                            audio: []
+                        };
+
+                        for (let prop in item) {
+
+                            newItem.id = item.id;
+                            newItem.date = item.date;
+
+                            if (prop == "attachments") {
+
+                                let attachmentsElem = item[prop];
+
+                                for (let prop in attachmentsElem) {
+                                    let incAttachmentsElem = attachmentsElem[prop];
+                                    if (incAttachmentsElem.type == "photo") {
+                                        newItem.photo.push(incAttachmentsElem.photo);
+                                    }
+                                    if (incAttachmentsElem.type == "audio") {
+                                        checkMusic = true;
+                                        newItem.audio.push(incAttachmentsElem.audio);
+                                    }
+                                }
+
+                            }
+
+                        }
+
+                        if (checkMusic == true) {
+                            newItems.push(newItem);
+                        }
+
+                    });
+
+                    console.dir(newItems);
+
+                    return newItems;
                 }
             );
         return playList;

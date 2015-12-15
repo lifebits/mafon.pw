@@ -5,7 +5,9 @@ import './index.scss';
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
-const APP = angular.module('app.music', [uiRouter])
+import isotopeAngular from '../vendor/angular-isotope';
+
+const APP = angular.module('app.music', [uiRouter, 'iso.directives'])
 
     .config(function($stateProvider) {
         $stateProvider
