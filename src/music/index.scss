@@ -21,7 +21,17 @@
     width: auto;
     height: 100vh;
   }
+
+  .wrapper-player {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+  }
+
 }
 
 @import "./css/left-side";
-@import "css/music-board";
+@import "./css/music-board";
+@import "./css/player";

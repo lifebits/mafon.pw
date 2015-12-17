@@ -32,7 +32,8 @@ module.exports = {
         ],
         noParse: [
             /[\/\\]node_modules[\/\\]angular[\/\\]angular/,
-            /[\/\\]node_modules[\/\\]angular-ui-router/
+            /[\/\\]node_modules[\/\\]angular-ui-router/,
+            /[\/\\]vendor[\/\\]angular-soundmanager2/
         ]
     },
 

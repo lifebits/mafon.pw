@@ -9,13 +9,12 @@
                 <div class="music-card-img">
                     <img src="">
                 </div>
-                <div class="music-card-list">
-                    <ul>
-                        <li ng-repeat="audio in card.audio">
-                            {{::audio.title}}
-                        </li>
-                    </ul>
-                </div>
+                <ul class="music-card-list">
+                    <li ng-repeat="song in card.audio">
+                        <button music-player="play" add-song="song">{{ song.title }}</button>
+                        <button music-player add-song="song">+</button>
+                    </li>
+                </ul>
             </div>
         </li>
     </ul>
@@ -30,4 +29,5 @@
                     </li>
                 </ul>
            <span>{{::item.id}}</span>
+           {{::audio.title}}
 -->

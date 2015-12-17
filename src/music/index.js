@@ -6,8 +6,9 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
 import isotopeAngular from '../vendor/angular-isotope';
+import soundManagerAngular from '../vendor/angular-soundmanager2';
 
-const APP = angular.module('app.music', [uiRouter, 'iso.directives'])
+const APP = angular.module('app.music', [uiRouter, 'iso.directives', 'angularSoundManager'])
 
     .config(function($stateProvider) {
         $stateProvider

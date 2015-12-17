@@ -8,4 +8,23 @@
         <ui-view></ui-view>
     </section>
 
+    <section class="wrapper-player">
+        <nav class="player-nav">
+            <sound-manager></sound-manager>
+            <div class="inc">
+                <div>{{ currentPlaying.artist }}</div>
+                <div>{{ currentPlaying.title }}</div>
+            </div>
+            <!--
+
+            Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.artist }} ({{ currentPostion }} / {{ currentDuration }})
+
+            <div class="seekBase" seek-track>
+                <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
+            </div>
+            <br />
+            <button stop-music>Stop</button>-->
+        </nav>
+    </section>
+
 </section>

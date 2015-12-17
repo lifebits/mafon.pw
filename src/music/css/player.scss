@@ -1,0 +1,25 @@
+.player-nav {
+  width: 100%;
+  height: 100%;
+  background-color: #121315;
+  color: #fefefe;
+
+  .inc {
+    position: relative;
+    display: inline-block;
+
+  }
+
+  .seekBase {
+    height: 30px;
+    width: 90%;
+    border: 1px solid #CCCCCC;
+  }
+
+  .seekLoad {
+    height: 30px;
+    width: 0;
+    background-color: #E0EAF1;
+  }
+
+}

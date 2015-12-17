@@ -8,18 +8,17 @@ const playList = function(){
         scope: {},
         template: playListTemplate,
         controllerAs: 'MusicBoard',
-        controller: function(MusicAppService) {
-            this.musicCard, this.musicList;
+        controller: function($scope, MusicAppService) {
+            this.musicCard;
 
-
-            MusicAppService.getPlayList()
+            MusicAppService.getCardList()
                 .then(
                     result => {
-                        let playList = result;
-                        this.musicCard = playList;
-                        //this.musicList = playList;
+                        this.musicCard = result;
+                        //$scope.songs = result.playList;
 
-                        //console.dir(this.musicList);
+                        console.dir($scope);
+                        console.log(result);
                     }
                 );
 

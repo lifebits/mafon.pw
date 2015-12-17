@@ -2,20 +2,16 @@
 
 const musicAppService = function($http) {
 
-    this.getPlayList = () => {
-        let playList = getJSONFromVK()
+    this.getCardList = () => {
+        let data = getJSONFromVK()
             .then(
-                result => {
-                    let items = result.data.response.items;
-                    //console.dir(items);
+                response => {
+                    let itemsReceived = response.data.response.items;
 
-                    let newItems = [];
-                    //Отфильтровываем записи без attachments!
-                    /*items = items.filter(function(el) {
-                        return el['attachments'];
-                    })*/
+                    let cardList = [];
+                    let playlist = [];//????
 
-                    items.forEach(function(item) {
+                    itemsReceived.forEach(function(item) {
                         let checkMusic = false;
                         let newItem = {
                             photo: [],
@@ -39,6 +35,7 @@ const musicAppService = function($http) {
                                     if (incAttachmentsElem.type == "audio") {
                                         checkMusic = true;
                                         newItem.audio.push(incAttachmentsElem.audio);
+                                        playlist.push(incAttachmentsElem.audio);
                                     }
                                 }
 
@@ -47,21 +44,26 @@ const musicAppService = function($http) {
                         }
 
                         if (checkMusic == true) {
-                            newItems.push(newItem);
+                            cardList.push(newItem);
                         }
 
                     });
 
-                    console.dir(newItems);
+                    /*let result = {
+                        cardList: cardList,
+                        playList: playlist
+                    }
 
-                    return newItems;
+                    console.dir(result);*/
+
+                    return cardList;
                 }
             );
-        return playList;
+        return data;
     };
 
     let getJSONFromVK = () => {
-        return $http.jsonp('https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain=rock_music_on&count=20&offset=0&callback=JSON_CALLBACK')
+        return $http.jsonp('https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain=rock_music_on&count=2&offset=0&callback=JSON_CALLBACK')
             .then(
                 response => response
             )
