@@ -16,15 +16,20 @@ const APP = angular.module('app.music', [uiRouter, 'iso.directives', 'angularSou
                 url: '/music',
                 template: '<music-app/>'
             })
-            .state('music.section', {
+            /*.state('music.section', {
                 url: '/:sectionId',
                 template: '<music-board/>'
+            })*/
+            .state('music.playlist', {
+                url: '/:playlistId',
+                template: '<music-playlist/>'
             });
     })
 
     .directive('musicApp', require('./musicAppDirective'))
     .directive('leftSide', require('./leftSideDirective'))
     .directive('musicBoard', require('./musicBoardDirective'))
+    .directive('musicPlaylist', require('./musicPlaylistDirective'))
 
     .service('MusicAppService', require('./musicAppService'))
     .service('LeftSideService', require('./leftSideService'))

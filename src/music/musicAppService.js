@@ -4,7 +4,7 @@ const musicAppService = function($http) {
 
     this.getCardsGroup = () => {
         let cardsGroup = [
-            {name: "Rock | Рок"},
+            {name: "Rock | Рок", id: "rock_music_on"},
             {name: "Exclusive"},
             {name: "Indie"},
             {name: "UKG Music"},
@@ -19,6 +19,7 @@ const musicAppService = function($http) {
             .then(
                 response => {
                     let itemsReceived = response.data.response.items;
+                    console.dir(itemsReceived);
 
                     let cardList = [];
                     let playlist = [];//????

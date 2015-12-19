@@ -2,27 +2,15 @@
 
     <nav class="cardsGroupList">
         <ul>
-            <li ng-repeat="item in MusicBoard.cardsGroup">
-                <a>{{item.name}}</a>
+            <li ng-repeat="item in MusicBoard.listPlaylists"
+                ui-sref="music.playlist({playlistId: item.id})">
+                <a>
+                    {{item.name}}
+                </a>
             </li>
         </ul>
     </nav>
 
-    <ul isotope-container class="grid">
-        <li isotope-item ng-repeat="card in MusicBoard.musicCard"
-            class="grid-item">
-            <div class="music-card">
-                <div class="music-card-img">
-                    <img src="">
-                </div>
-                <ul class="music-card-list">
-                    <li ng-repeat="song in card.audio">
-                        <button music-player="play" add-song="song">{{ song.title }}</button>
-                        <button music-player add-song="song">+</button>
-                    </li>
-                </ul>
-            </div>
-        </li>
-    </ul>
+    <ui-view></ui-view>
 
 </section>

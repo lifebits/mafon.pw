@@ -1,32 +1,19 @@
 'use strict';
 
-import playListTemplate from './views/music-board.html';
+import boardTemplate from './views/music-board.html';
 
-const playList = function(){
+const board = function(){
     return {
         restrict: 'E',
         scope: {},
-        template: playListTemplate,
+        template: boardTemplate,
         controllerAs: 'MusicBoard',
         controller: function($scope, MusicAppService) {
-            this.musicCard;
 
-            this.cardsGroup = MusicAppService.getCardsGroup();
-
-            MusicAppService.getCardList()
-                .then(
-                    result => {
-                        this.musicCard = result;
-                        //$scope.songs = result.playList;
-
-                        console.dir($scope);
-                        console.log(result);
-                    }
-                );
-
+            this.listPlaylists = MusicAppService.getCardsGroup();
 
         }
     }
 };
 
-export default playList;
+export default board;

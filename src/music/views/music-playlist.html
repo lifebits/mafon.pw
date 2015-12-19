@@ -1,0 +1,16 @@
+<ul isotope-container class="grid">
+    <li isotope-item ng-repeat="card in Playlist.musicCard"
+        class="grid-item">
+        <div class="music-card">
+            <div class="music-card-img">
+                <img src="">
+            </div>
+            <ul class="music-card-list">
+                <li ng-repeat="song in card.audio">
+                    <button music-player="play" add-song="song">{{ song.title }}</button>
+                    <button music-player add-song="song">+</button>
+                </li>
+            </ul>
+        </div>
+    </li>
+</ul>
