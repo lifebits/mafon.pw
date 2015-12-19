@@ -1,25 +1,119 @@
 .player-nav {
+  //position: relative;
   width: 100%;
-  height: 100%;
+  height: 60px;
+  line-height: 60px;
   background-color: #121315;
   color: #fefefe;
+  font-size: 0;
+
+  a svg {
+    width: 26px;
+    height: 26px;
+    fill: #c1c1c1;
+  }
+
+  a.active svg {
+    fill: #70c7d8;
+  }
+
+  .right-section {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    bottom: 0;
+  }
 
   .inc {
     position: relative;
     display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    margin-left: 14px;
+  }
+
+  .currentSong-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #70c7d8;
+  }
+
+  .currentSong-info {
+    overflow: hidden;
+    max-height: 100%;
+    width: 220px;
+    font-size: 13px;
+  }
+
+  //play stop next
+  .mainNav {
+    display: inline-block;
+    padding: 0 8px;
+
+    .play {
+      margin-left: 4px;
+    }
+
+    .play svg {
+      width: 36px;
+      height: 36px;
+      fill: #EEEEEE;
+    }
+
+    .next-prev {
+      margin-left: 4px;
+    }
 
   }
 
-  .seekBase {
-    height: 30px;
-    width: 90%;
-    border: 1px solid #CCCCCC;
+  .currentSong-position {
+    font-size: 13px;
+    line-height: normal;
   }
 
-  .seekLoad {
-    height: 30px;
-    width: 0;
-    background-color: #E0EAF1;
+  .currentSong-timeline {
+    position: absolute;
+    left: 468px;
+    right: 320px;
+    top: 50%;
+    margin-top: -5px;
+
+    .seekBase {
+      height: 10px;
+      width: 100%;
+      background-color: #2f2f2f;
+      border-radius: 4px;
+    }
+
+    .seekLoad {
+      height: 12px;
+      width: 0;
+      background-color: #ca1629;
+      border-radius: 4px;
+    }
+  }
+
+  .currentSong-duration {
+    font-size: 13px;
+    line-height: normal;
+  }
+
+  .btn-playlist {
+
+  }
+
+  .volumeChange {
+    height: 10px;
+    width: 120px;
+    background-color: #2f2f2f;
+    border-radius: 4px;
+  }
+
+  .volumeCurrent {
+    height: 100%;
+    width: 50%;
+    background-color: #70c7d8;
+    border-radius: 4px;
   }
 
 }

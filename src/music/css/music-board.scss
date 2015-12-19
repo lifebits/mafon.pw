@@ -6,10 +6,41 @@
     width: 100%;
     height: 100vh;
     color: blue;
+    background-color: #333333;
+
+    nav.cardsGroupList {
+      position: relative;
+      box-sizing: border-box;
+      height: 60px;
+      margin: 0 10px;
+      line-height: 60px;
+      font-size: 0;
+
+      ul {
+        box-sizing: border-box;
+        height: inherit;
+        line-height: inherit;
+        border-bottom: 2px solid #666666;
+      }
+
+      li {
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 0 10px;
+        height: inherit;
+        line-height: inherit;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: center;
+        color: #888888;
+        border-bottom: 2px solid #666666;
+      }
+    }
 
     .grid {
       position: relative;
-      width: 96%;
+      width: 98%;
       margin: 0 auto;
 
       .grid-item {
@@ -18,13 +49,24 @@
         position: relative;
         vertical-align: top;
         width: 25%;
-        min-height: 100px;
-        padding: 0 5px;
-        padding-bottom: 5px;
+        min-width: 200px;
+        margin: 10px 0;
+        padding: 5px 5px;
         text-align: left;
         font-size: 14px;
-        //border: 1px solid #333333;
+        //background-color: #FFFFFF;
       }
+
+      /*.grid-item:before {
+        z-index: 0;
+        content: '';
+        position: absolute;
+        top: 20px;
+        bottom: -20px;
+        left: 20px;
+        right: -20px;
+        background-color: #00FF88;
+      }*/
 
     }
 
@@ -39,7 +81,7 @@
       li {
         position: relative;
         width: 100%;
-        height: 80px;
+        height: 76px;
         margin-bottom: 5px;
         background-color: #1f1f1f;
       }

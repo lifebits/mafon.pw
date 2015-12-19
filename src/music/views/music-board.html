@@ -1,7 +1,13 @@
 <section class="music-board">
-    <nav>
 
+    <nav class="cardsGroupList">
+        <ul>
+            <li ng-repeat="item in MusicBoard.cardsGroup">
+                <a>{{item.name}}</a>
+            </li>
+        </ul>
     </nav>
+
     <ul isotope-container class="grid">
         <li isotope-item ng-repeat="card in MusicBoard.musicCard"
             class="grid-item">
@@ -18,16 +24,5 @@
             </div>
         </li>
     </ul>
+
 </section>
-
-<!--
-
-
-<ul>
-                    <li ng-repeat="attachments in item.attachments">
-                        {{::attachments.type}}
-                    </li>
-                </ul>
-           <span>{{::item.id}}</span>
-           {{::audio.title}}
--->

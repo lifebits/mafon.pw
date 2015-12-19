@@ -22,9 +22,8 @@ module.exports = {
 
     module: {
         loaders: [
-            { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
+            { test: /\.js$/, loader: 'babel', exclude: [/node_modules/] },
             { test: /\.html$/, loader: 'ng-cache?prefix=[dir]/[dir]' },
-            //{ test: /\.css$/, loader: 'style-loader!css-loader'}
             { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!resolve-url!sass?sourceMap') },
             { test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/, loader: 'file?name=[path][name].[ext]?[hash]' },
 
@@ -33,7 +32,7 @@ module.exports = {
         noParse: [
             /[\/\\]node_modules[\/\\]angular[\/\\]angular/,
             /[\/\\]node_modules[\/\\]angular-ui-router/,
-            /[\/\\]vendor[\/\\]angular-soundmanager2/
+            /vendor[\/\\]angular-soundmanager2/
         ]
     },
 

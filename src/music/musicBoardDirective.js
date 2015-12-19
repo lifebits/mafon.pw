@@ -11,6 +11,8 @@ const playList = function(){
         controller: function($scope, MusicAppService) {
             this.musicCard;
 
+            this.cardsGroup = MusicAppService.getCardsGroup();
+
             MusicAppService.getCardList()
                 .then(
                     result => {

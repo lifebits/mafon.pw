@@ -2,8 +2,20 @@
 
 const musicAppService = function($http) {
 
+    this.getCardsGroup = () => {
+        let cardsGroup = [
+            {name: "Rock | Рок"},
+            {name: "Exclusive"},
+            {name: "Indie"},
+            {name: "UKG Music"},
+            {name: "Soundtrack"},
+            {name: "Love"}
+        ];
+        return cardsGroup;
+    };
+
     this.getCardList = () => {
-        let data = getJSONFromVK()
+        return getJSONFromVK()
             .then(
                 response => {
                     let itemsReceived = response.data.response.items;
@@ -59,11 +71,10 @@ const musicAppService = function($http) {
                     return cardList;
                 }
             );
-        return data;
     };
 
     let getJSONFromVK = () => {
-        return $http.jsonp('https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain=rock_music_on&count=2&offset=0&callback=JSON_CALLBACK')
+        return $http.jsonp('https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain=rock_music_on&count=4&offset=0&callback=JSON_CALLBACK')
             .then(
                 response => response
             )
