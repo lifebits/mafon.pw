@@ -1,17 +1,17 @@
 'use strict';
 
-const musicAppService = function($http) {
+const musicAppService = function($http, $stateParams) {
 
     this.getCardsGroup = () => {
-        let cardsGroup = [
-            {name: "Rock | Рок", id: "rock_music_on"},
+        let domain = [
+            {name: "Rock | Рок", domainName: "rock_music_on"},
             {name: "Exclusive"},
-            {name: "Indie"},
+            {name: "Indie", domainName: "indie_music"},
             {name: "UKG Music"},
             {name: "Soundtrack"},
             {name: "Love"}
         ];
-        return cardsGroup;
+        return domain;
     };
 
     this.getCardList = () => {
@@ -75,11 +75,19 @@ const musicAppService = function($http) {
     };
 
     let getJSONFromVK = () => {
-        return $http.jsonp('https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain=rock_music_on&count=4&offset=0&callback=JSON_CALLBACK')
+        return $http.jsonp(constructedURL())
             .then(
                 response => response
             )
     };
+
+    let constructedURL = () => {
+        let opts = {
+            domainName: $stateParams.playlistId
+        };
+
+        return 'https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain='+opts.domainName+'&count=4&offset=0&callback=JSON_CALLBACK'
+    }
 
 };
 

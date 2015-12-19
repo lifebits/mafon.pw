@@ -3,7 +3,8 @@
     <nav class="cardsGroupList">
         <ul>
             <li ng-repeat="item in MusicBoard.listPlaylists"
-                ui-sref="music.playlist({playlistId: item.id})">
+                ui-sref="music.playlist({playlistId: item.domainName})"
+                ui-sref-active="active">
                 <a>
                     {{item.name}}
                 </a>

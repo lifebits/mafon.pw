@@ -12,6 +12,7 @@ const board = function(){
 
             this.listPlaylists = MusicAppService.getCardsGroup();
 
+
         }
     }
 };
