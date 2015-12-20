@@ -4,76 +4,15 @@
     <section class="column wrapper-leftSide">
         <left-side></left-side>
     </section>
--->
+    -->
 
     <section class="column wrapper-musicBoard">
-        <!--<ui-view></ui-view> -для расширения функционала -->
+        <!--<ui-view></ui-view> -для расширения функционала-->
         <music-board/>
     </section>
 
     <section class="wrapper-player">
-        <nav class="player-nav">
-
-            <sound-manager></sound-manager>
-
-            <div class="currentSong-icon inc"></div>
-            <div class="currentSong-info inc">
-                <div>Currently Playing:</div>
-                <div>
-                    <span class="title">{{ currentPlaying.title }}</span>
-                    by <span class="artist">{{ currentPlaying.artist }}</span>
-                </div>
-            </div>
-
-            <section class="mainNav">
-                <a prev-track class="next-prev inc">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M6,18.14V6.14H8V18.14H6M9.5,12.14L18,6.14V18.14L9.5,12.14Z" /></svg>
-                </a>
-                <a play-pause-toggle class="play inc"
-                    data-play='<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,20.14C7.59,20.14 4,16.55 4,12.14C4,7.73 7.59,4.14 12,4.14C16.41,4.14 20,7.73 20,12.14C20,16.55 16.41,20.14 12,20.14M12,2.14A10,10 0 0,0 2,12.14A10,10 0 0,0 12,22.14A10,10 0 0,0 22,12.14C22,6.61 17.5,2.14 12,2.14M10,16.64L16,12.14L10,7.64V16.64Z" /></svg>'
-                    data-pause='<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M13,16.14H15V8.14H13M12,20.14C7.59,20.14 4,16.55 4,12.14C4,7.73 7.59,4.14 12,4.14C16.41,4.14 20,7.73 20,12.14C20,16.55 16.41,20.14 12,20.14M12,2.14A10,10 0 0,0 2,12.14A10,10 0 0,0 12,22.14A10,10 0 0,0 22,12.14C22,6.61 17.5,2.14 12,2.14M9,16.14H11V8.14H9V16.14Z" /></svg>'
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 24 24"><path d="M18,18H6V6H18V18Z" /></svg>
-                </a>
-                <a next-track class="next-prev inc">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M16,18.14H18V6.14H16M6,18.14L14.5,12.14L6,6.14V18.14Z" /></svg>
-                </a>
-            </section>
-
-            <div class="currentSong-position inc">
-                <span ng-if="!currentPostion">00:00</span>
-                {{ currentPostion }}
-            </div>
-
-            <div class="currentSong-timeline">
-                <div class="seekBase" seek-track>
-                    <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
-                </div>
-            </div>
-
-            <section class="right-section">
-
-                <div class="currentSong-duration inc">
-                    <span ng-if="!currentDuration">00:00</span>
-                    {{ currentDuration }}
-                </div>
-                <a repeat-music ng-class="{'active':repeat == true}" class="btn-repeat inc">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 24 24"><path d="M17,17H7V14L3,18L7,22V19H19V13H17M7,7H17V10L21,6L17,2V5H5V11H7V7Z" /></svg>
-                </a>
-                <a mute-music class="btn-mute inc">
-                    <svg ng-if="mute == false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 24 24"><path d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" /></svg>
-                    <svg ng-if="mute == true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,4L9.91,6.09L12,8.18M4.27,3L3,4.27L7.73,9H3V15H7L12,20V13.27L16.25,17.53C15.58,18.04 14.83,18.46 14,18.7V20.77C15.38,20.45 16.63,19.82 17.68,18.96L19.73,21L21,19.73L12,10.73M19,12C19,12.94 18.8,13.82 18.46,14.64L19.97,16.15C20.62,14.91 21,13.5 21,12C21,7.72 18,4.14 14,3.23V5.29C16.89,6.15 19,8.83 19,12M16.5,12C16.5,10.23 15.5,8.71 14,7.97V10.18L16.45,12.63C16.5,12.43 16.5,12.21 16.5,12Z" /></svg>
-                </a>
-                <div class="volumeChange inc">
-                    <div class="volumeCurrent"></div>
-                </div>
-                <a class="btn-playlist inc">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 24 24"><path d="M7,5V7H21V5M7,13H21V11H7M7,19H21V17H7M4,16.67C3.26,16.67 2.67,17.27 2.67,18C2.67,18.73 3.27,19.33 4,19.33C4.73,19.33 5.33,18.73 5.33,18C5.33,17.27 4.74,16.67 4,16.67M4,4.5A1.5,1.5 0 0,0 2.5,6A1.5,1.5 0 0,0 4,7.5A1.5,1.5 0 0,0 5.5,6A1.5,1.5 0 0,0 4,4.5M4,10.5A1.5,1.5 0 0,0 2.5,12A1.5,1.5 0 0,0 4,13.5A1.5,1.5 0 0,0 5.5,12A1.5,1.5 0 0,0 4,10.5Z" /></svg>
-                </a>
-
-            </section>
-
-        </nav>
+        <music-player-nav/>
     </section>
 
 </section>

@@ -13,5 +13,11 @@ import musicApp from './music';
 
 angular.module('app', [uiRouter, musicApp])
     .config(routing)
+
+    .filter('secondsToDateTime', [function() {
+        return function(seconds) {
+            return new Date(1970, 0, 1).setSeconds(seconds);
+        };
+    }])
 ;
 

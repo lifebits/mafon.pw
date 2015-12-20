@@ -29,6 +29,7 @@ const APP = angular.module('app.music', [uiRouter, 'iso.directives', 'angularSou
     .directive('musicApp', require('./musicAppDirective'))
     .directive('leftSide', require('./leftSideDirective'))
     .directive('musicBoard', require('./musicBoardDirective'))
+    .directive('musicPlayerNav', require('./musicPlayerNavDirective'))
     .directive('musicPlaylist', require('./musicPlaylistDirective'))
 
     .service('MusicAppService', require('./musicAppService'))

@@ -4,11 +4,15 @@ const musicAppService = function($http, $stateParams) {
 
     this.getCardsGroup = () => {
         let domain = [
-            {name: "Rock | Рок", domainName: "rock_music_on"},
-            {name: "Exclusive"},
+            {name: "Exclusive", domainName: "exclusive_muzic"},
+            {name: "Club", domainName: "public_of_music"},
             {name: "Indie", domainName: "indie_music"},
-            {name: "UKG Music"},
-            {name: "Soundtrack"},
+            {name: "Instrumental", domainName: "artmelody"},
+            {name: "Life", domainName: "gooddaday"},
+            {name: "Pop|rus ", domainName: "plmusic"},
+            {name: "Rap", domainName: "rap.lyric"},
+            {name: "Rock", domainName: "rock_music_on"},
+            {name: "Soundtrack", domainName: "ostmelody"},
             {name: "Love"}
         ];
         return domain;
@@ -62,7 +66,7 @@ const musicAppService = function($http, $stateParams) {
 
                     });
 
-                    /*let result = {
+                    /*let result = {1112222
                         cardList: cardList,
                         playList: playlist
                     }
@@ -75,6 +79,7 @@ const musicAppService = function($http, $stateParams) {
     };
 
     let getJSONFromVK = () => {
+        //https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain=rock_music_on&count=4&offset=0&callback=JSON_CALLBACK
         return $http.jsonp(constructedURL())
             .then(
                 response => response
@@ -86,7 +91,7 @@ const musicAppService = function($http, $stateParams) {
             domainName: $stateParams.playlistId
         };
 
-        return 'https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain='+opts.domainName+'&count=4&offset=0&callback=JSON_CALLBACK'
+        return 'https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain='+opts.domainName+'&count=30&offset=0&callback=JSON_CALLBACK'
     }
 
 };

@@ -8,7 +8,7 @@ const playList = function(){
         scope: {},
         template: playlistTemplate,
         controllerAs: 'Playlist',
-        controller: function(MusicAppService, $stateParams) {
+        controller: function(MusicAppService) {
 
             MusicAppService.getCardList()
                 .then(
@@ -16,11 +16,11 @@ const playList = function(){
                         this.musicCard = result;
 
                         //console.dir($scope);
-                        //console.log(result);
+                        console.log(this.musicCard);
 
                     }
                 );
-            console.log($stateParams);
+
         }
     }
 };
