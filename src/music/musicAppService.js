@@ -91,7 +91,7 @@ const musicAppService = function($http, $stateParams) {
             domainName: $stateParams.playlistId
         };
 
-        return 'https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain='+opts.domainName+'&count=30&offset=0&callback=JSON_CALLBACK'
+        return 'https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain='+opts.domainName+'&count=4&offset=0&callback=JSON_CALLBACK'
     }
 
 };

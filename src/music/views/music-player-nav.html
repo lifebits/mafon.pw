@@ -59,8 +59,21 @@
 
     </section>
 
-    <div class="userPlaylist">
 
-    </div>
+    <section class="customPlaylist-wrapper">
+
+        <div class="customPlaylist-title">
+            <span>Custom playlist</span>
+        </div>
+
+        <div class="customPlaylist">
+            <ul>
+                <li ng-repeat="song in playlist">
+                    <a play-from-playlist="song">{{song.title}}</a>
+                </li>
+            </ul>
+        </div>
+
+    </section>
 
 </nav>

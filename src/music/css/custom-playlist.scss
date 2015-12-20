@@ -1,0 +1,30 @@
+.customPlaylist-wrapper {
+  position: fixed;
+  box-sizing: border-box;
+  opacity: 0.96;
+  top: 0;
+  bottom: 60px;
+  //bottom: 0;
+  right: 50px;
+  width: 360px;
+  padding: 0 16px;
+  background-color: #1f1f1f;
+}
+
+.customPlaylist-title {
+  position: relative;
+  box-sizing: inherit;
+  line-height: 58px;
+  //margin: 0 16px;
+  font-size: 14px;
+  color: #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.customPlaylist {
+    box-sizing: inherit;
+
+  li {
+    font-size: 13px;
+  }
+}
