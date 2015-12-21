@@ -53,23 +53,46 @@
         <div class="volumeChange inc">
             <div class="volumeCurrent"></div>
         </div>
-        <a class="btn-playlist inc">
+        <a class="btn-playlist inc" ng-click="PlayerNavigation.checkOpenCustomPlaylist()" ng-class="{'active':PlayerNavigation.openCustomPlaylist == true}">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 24 24"><path d="M7,5V7H21V5M7,13H21V11H7M7,19H21V17H7M4,16.67C3.26,16.67 2.67,17.27 2.67,18C2.67,18.73 3.27,19.33 4,19.33C4.73,19.33 5.33,18.73 5.33,18C5.33,17.27 4.74,16.67 4,16.67M4,4.5A1.5,1.5 0 0,0 2.5,6A1.5,1.5 0 0,0 4,7.5A1.5,1.5 0 0,0 5.5,6A1.5,1.5 0 0,0 4,4.5M4,10.5A1.5,1.5 0 0,0 2.5,12A1.5,1.5 0 0,0 4,13.5A1.5,1.5 0 0,0 5.5,12A1.5,1.5 0 0,0 4,10.5Z" /></svg>
         </a>
 
     </section>
 
 
-    <section class="customPlaylist-wrapper">
+    <section ng-show="PlayerNavigation.openCustomPlaylist == true" class="customPlaylist-wrapper">
 
         <div class="customPlaylist-title">
             <span>Custom playlist</span>
+            <section class="right">
+                <svg ng-click="PlayerNavigation.checkEditCustomPlaylistState()"
+                     ng-class="{'active':PlayerNavigation.editCustomPlaylistState == true}"
+                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
+                </svg>
+                <svg clear-playlist
+                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M16.24,3.56L21.19,8.5C21.97,9.29 21.97,10.55 21.19,11.34L12,20.53C10.44,22.09 7.91,22.09 6.34,20.53L2.81,17C2.03,16.21 2.03,14.95 2.81,14.16L13.41,3.56C14.2,2.78 15.46,2.78 16.24,3.56M4.22,15.58L7.76,19.11C8.54,19.9 9.8,19.9 10.59,19.11L14.12,15.58L9.17,10.63L4.22,15.58Z" />
+                </svg>
+            </section>
         </div>
 
         <div class="customPlaylist">
             <ul>
-                <li ng-repeat="song in playlist">
-                    <a play-from-playlist="song">{{song.title}}</a>
+                <li class="song" ng-repeat="song in playlist" ng-class="{'active':currentPlaying.id == song.id}">
+
+                    <a play-from-playlist="song">
+                        <div class="song-name song-inc-elem">{{::song.artist}} - {{::song.title}}</div>
+
+                        <section class="right">
+                            <div class="song-inc-elem">
+                                <span ng-if="PlayerNavigation.editCustomPlaylistState == false && currentPlaying.id !== song.id">{{::song.duration | secondsToDateTime | date:'mm:ss'}}</span>
+                                <span ng-if="PlayerNavigation.editCustomPlaylistState == false && currentPlaying.id == song.id">{{currentPostion}}</span>
+                                <span class="btn-remove" ng-if="PlayerNavigation.editCustomPlaylistState == true" remove-from-playlist="song" data-index="{{$index}}">remove</span>
+                            </div>
+                        </section>
+                    </a>
+
                 </li>
             </ul>
         </div>

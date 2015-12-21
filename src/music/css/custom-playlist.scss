@@ -1,13 +1,11 @@
 .customPlaylist-wrapper {
   position: fixed;
   box-sizing: border-box;
-  opacity: 0.96;
+  opacity: 0.99;
   top: 0;
   bottom: 60px;
-  //bottom: 0;
-  right: 50px;
+  right: 70px;
   width: 360px;
-  padding: 0 16px;
   background-color: #1f1f1f;
 }
 
@@ -15,16 +13,83 @@
   position: relative;
   box-sizing: inherit;
   line-height: 58px;
-  //margin: 0 16px;
-  font-size: 14px;
+  margin: 0 16px 12px 16px;
+  font-size: 16px;
+  text-transform: uppercase;
   color: #eeeeee;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #666666;
+
+  .right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+      margin-left: 6px;
+      fill: #888888;
+    }
+
+    svg:hover {
+      fill: #ca1629;
+    }
+
+    svg.active {
+      fill: #ca1629;
+    }
+  }
 }
 
 .customPlaylist {
-    box-sizing: inherit;
+  position: relative;
+  box-sizing: inherit;
 
-  li {
+  li.song {
+    position: relative;
+    box-sizing: inherit;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 16px;
     font-size: 13px;
+    color: #888888;
+
+    .song-inc-elem {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .song-name {
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 16px;
+      right: 80px;
+    }
+
+    .right {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 16px;
+    }
+
+    .btn-remove {
+      //color: #ca1629;
+    }
+  }
+
+  li.song:hover {
+    color: #FFFFFF;
+    cursor: default;
+  }
+
+  li.song.active {
+    color: #FFFFFF;
   }
 }
