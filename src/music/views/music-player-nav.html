@@ -2,7 +2,7 @@
 
     <sound-manager></sound-manager>
 
-    <div class="currentSong-icon inc"></div>
+    <div ng-click="PlayerNavigation.aaa()" class="currentSong-icon inc"></div>
     <div class="currentSong-info inc">
         <div>Currently Playing:</div>
         <div>
@@ -80,15 +80,23 @@
         <div class="customPlaylist">
             <ul>
                 <li class="song" ng-repeat="song in playlist" ng-class="{'active':currentPlaying.id == song.id}">
+                    <div class="btn-play-pause"
+                         ng-if="currentPlaying.id == song.id"
+                         play-pause-toggle
+                         data-play='<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 24 24"><path d="M14,19.14H18V5.14H14M6,19.14H10V5.14H6V19.14Z" /></svg>'
+                         data-pause='<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 24 24"><path d="M8,5.14V19.14L19,12.14L8,5.14Z" /></svg>'>
+                    </div>
 
                     <a play-from-playlist="song">
+
+
                         <div class="song-name song-inc-elem">{{::song.artist}} - {{::song.title}}</div>
 
                         <section class="right">
                             <div class="song-inc-elem">
                                 <span ng-if="PlayerNavigation.editCustomPlaylistState == false && currentPlaying.id !== song.id">{{::song.duration | secondsToDateTime | date:'mm:ss'}}</span>
                                 <span ng-if="PlayerNavigation.editCustomPlaylistState == false && currentPlaying.id == song.id">{{currentPostion}}</span>
-                                <span class="btn-remove" ng-if="PlayerNavigation.editCustomPlaylistState == true" remove-from-playlist="song" data-index="{{$index}}">remove</span>
+                                <span ng-if="PlayerNavigation.editCustomPlaylistState == true" remove-from-playlist="song" data-index="{{$index}}">remove</span>
                             </div>
                         </section>
                     </a>

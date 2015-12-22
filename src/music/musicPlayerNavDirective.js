@@ -21,6 +21,11 @@ const player = function(){
                 this.editCustomPlaylistState = ( this.editCustomPlaylistState == false ) ? true : false;
             };
 
+            this.aaa = () => {
+                console.log(soundManager.currentPlaying.title);
+            }
+
+
         }
     }
 };

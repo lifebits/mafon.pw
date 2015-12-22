@@ -47,20 +47,34 @@
 .customPlaylist {
   position: relative;
   box-sizing: inherit;
+  margin: 0 16px 0 28px;
 
   li.song {
     position: relative;
     box-sizing: inherit;
     height: 32px;
     line-height: 32px;
-    padding: 0 16px;
-    font-size: 13px;
+    //padding: 0 16px;
+    font-size: 0;
     color: #888888;
+    //border: 1px solid white;
 
     .song-inc-elem {
       position: relative;
       display: inline-block;
       vertical-align: middle;
+      font-size: 13px;
+    }
+
+    .btn-play-pause {
+      //z-index: 1;
+      position: absolute;
+      top: 50%;
+      left: -22px;
+      width: 18px;
+      height: 18px;
+      fill: #FFFFFF;
+      transform: translateY(-50%);
     }
 
     .song-name {
@@ -68,7 +82,7 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      left: 16px;
+      left: 0;
       right: 80px;
     }
 
@@ -76,12 +90,9 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      right: 16px;
+      right: 0;
     }
 
-    .btn-remove {
-      //color: #ca1629;
-    }
   }
 
   li.song:hover {
