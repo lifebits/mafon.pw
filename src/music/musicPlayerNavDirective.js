@@ -10,7 +10,7 @@ const player = function(){
         controllerAs: 'PlayerNavigation',
         controller: function() {
 
-            this.openCustomPlaylist = true;
+            this.openCustomPlaylist = false;
             this.editCustomPlaylistState = false;
 
             this.checkOpenCustomPlaylist = () => {

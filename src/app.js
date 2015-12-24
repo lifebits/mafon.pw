@@ -1,6 +1,7 @@
 'use strict';
 
 import './css/index.scss';
+import './css/animate.scss';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';

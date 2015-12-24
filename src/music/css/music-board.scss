@@ -72,9 +72,10 @@
 
       .grid-item {
         box-sizing: border-box; //времено, надо переписать на инхерит или добавить в ресет
-        display: inline-block;
-        position: relative;
-        vertical-align: top;
+        //display: inline-block;
+        //position: relative;
+        position: absolute;
+        //vertical-align: top;
         width: 25%;
         min-width: 230px;
         margin: 10px 0 0;
@@ -86,7 +87,7 @@
 
     }
 
-    // Изображение в плейлисте
+    // Изображение для плейлиста
     .music-card {
       position: relative;
       box-sizing: border-box;
@@ -136,7 +137,7 @@
         section.left {
 
           .btn-play {
-            //width: 40px;
+            //width: 40px;1111
             //height: 40px;
             margin-left: 10px;
             line-height: normal;
@@ -144,6 +145,19 @@
             background-color: #6d5f5c;
             border-radius: 4px;
             fill: #efe9db;
+          }
+
+          .btn-play:active {
+            transform: rotate(360deg);
+            background: #ca1629;
+            border-radius: 50%;
+          }
+
+          .rotate {
+            transition: all 0.5s ease-in-out;
+          }
+          .rotate:active {
+            transition: all 0.8s ease-in-out;
           }
         }
 

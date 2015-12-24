@@ -9,6 +9,16 @@
   background-color: #1f1f1f;
 }
 
+.customPlaylist-wrapper {
+  -webkit-animation-name: bounceInRight;
+  animation-name: bounceInRight;
+}
+
+.customPlaylist-wrapper.ng-hide {
+  -webkit-animation-name: bounceOutRight;
+  animation-name: bounceOutRight;
+}
+
 .customPlaylist-title {
   position: relative;
   box-sizing: inherit;
@@ -25,12 +35,31 @@
     bottom: 0;
     right: 0;
 
+    .wrapper-btn {
+      display: inline-block;
+      position: relative;
+      margin: 0 2px;
+    }
+
+    .btn-customPlaylist-close {
+      margin-left: 14px;
+
+      svg {
+        width: 36px;
+        height: 36px;
+        fill: #999999;
+      }
+
+      svg:hover {
+        fill: #70c7d8;
+      }
+    }
+
     svg {
       display: inline-block;
       vertical-align: middle;
       width: 20px;
       height: 20px;
-      margin-left: 6px;
       fill: #888888;
     }
 

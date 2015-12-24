@@ -11,9 +11,9 @@
                 <li ng-repeat="song in card.audio">
 
                     <section class="left">
-                        <div class="btn-play inc" music-player="play" add-song="song">
+                        <a class="btn-play inc rotate" music-player="play" add-song="song">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="26" height="26" viewBox="0 0 24 24"><path d="M8,5.14V19.14L19,12.14L8,5.14Z" /></svg>
-                        </div>
+                        </a>
                     </section>
 
                     <section class="center">
@@ -37,10 +37,3 @@
         </div>
     </li>
 </ul>
-
-<!--
-
-<button music-player="play" add-song="song">{{ song.title }}</button>
-                    <button music-player add-song="song">+</button>
-
--->
