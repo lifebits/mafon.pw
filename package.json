@@ -1,22 +1,22 @@
 {
-  "name": "cmp",
+  "name": "mafon",
   "version": "1.0.0",
   "description": "Cloud Media Player",
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "set NODE_ENV=production && webpack-dev-server --inline --hot"
+    "start": "webpack-dev-server --inline --hot"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lifebits/cmp.git"
+    "url": "git+https://github.com/lifebits/mafon.pw.git"
   },
   "author": "LifeBits",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lifebits/cmp/issues"
+    "url": "https://github.com/lifebits/mafon.pw/issues"
   },
-  "homepage": "https://github.com/lifebits/cmp#readme",
+  "homepage": "https://github.com/lifebits/mafon.pw#readme",
   "devDependencies": {
     "angular": "^1.4.8",
     "angular-animate": "^1.4.8",
