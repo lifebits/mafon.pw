@@ -1,10 +1,13 @@
 'use strict';
 
-let webpack = require('webpack'),
+const webpack = require('webpack');
+
+const NODE_ENV = process.env.NODE_ENV || 'development',
     ExtractTextPlugin = require("extract-text-webpack-plugin"),
-    //ngAnnotatePlugin = require('ng-annotate-webpack-plugin'),
-    path = require('path'),
-    APP = path.join(__dirname, '/src');
+    ngAnnotatePlugin = require('ng-annotate-webpack-plugin'),
+    path = require('path');
+
+const APP = path.join(__dirname, '/src');
 
 module.exports = {
 
@@ -37,17 +40,36 @@ module.exports = {
     },
 
     plugins: [
-        new ExtractTextPlugin("style.css")
+        new webpack.DefinePlugin({
+            NODE_ENV: JSON.stringify(NODE_ENV)
+        }),
 
-        /*new ngAnnotatePlugin({
-            add: true,
+        new ExtractTextPlugin("style.css"),
+
+        new ngAnnotatePlugin({
+            add: true
             // other ng-annotate options here
-        })*/
+        })
     ],
 
+    //devtool: NODE_ENV == 'development' ? "cheap-inline-module-source-map" : null,
     devtool: 'cheap-inline-module-source-map',
 
     devServer: {
         hot: true
     }
+
 };
+/*
+if (NODE_ENV == 'production') {
+    module.exports.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings:     false,
+                drop_console: true,
+                unsafe:       true
+            }
+        })
+    );
+}
+    */

@@ -4,10 +4,10 @@
 
     <div ng-click="PlayerNavigation.aaa()" class="currentSong-icon inc"></div>
     <div class="currentSong-info inc">
-        <div>Currently Playing:</div>
+        <div class="note">Currently Playing:</div>
         <div>
             <span class="title">{{ currentPlaying.title }}</span>
-            by <span class="artist">{{ currentPlaying.artist }}</span>
+            <sapn class="note">by</sapn> <span class="artist">{{ currentPlaying.artist }}</span>
         </div>
     </div>
 
@@ -90,7 +90,7 @@
 
         <div class="customPlaylist">
             <ul>
-                <li class="song animated" ng-repeat="song in playlist" ng-class="{'active':currentPlaying.id == song.id}">
+                <li class="song" ng-repeat="song in playlist" ng-class="{'active':currentPlaying.id == song.id}">
                     <div class="btn-play-pause"
                          ng-if="currentPlaying.id == song.id"
                          play-pause-toggle
@@ -99,8 +99,6 @@
                     </div>
 
                     <a play-from-playlist="song">
-
-
                         <div class="song-name song-inc-elem">{{::song.artist}} - {{::song.title}}</div>
 
                         <section class="right">

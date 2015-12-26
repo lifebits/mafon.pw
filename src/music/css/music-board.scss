@@ -1,5 +1,18 @@
 #music-app {
 
+  .music-board::-webkit-scrollbar {
+    width: 0.6em;
+  }
+
+  .music-board::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+
+  .music-board::-webkit-scrollbar-thumb {
+    background-color: #efe9db;
+    outline: 1px solid slategrey;
+  }
+
   .music-board {
     position: relative;
     overflow-y: scroll;
@@ -106,10 +119,10 @@
         img {
           position: relative;
           box-sizing: inherit;
-          left: 0px;
-          right: 0px;
-          top: 0px;
-          bottom: 0px;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
           width: 100%;
           border: 1px solid #333333;
         }

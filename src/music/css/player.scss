@@ -44,6 +44,10 @@
     width: 220px;
     margin-right: 10px;
     font-size: 13px;
+
+    .note {
+      font-size: 12px;
+    }
   }
 
   .btn-repeat {
@@ -60,8 +64,8 @@
     }
 
     .play svg {
-      width: 36px;
-      height: 36px;
+      width: 42px;
+      height: 42px;
       fill: #EEEEEE;
     }
 
@@ -78,8 +82,8 @@
 
   .currentSong-timeline {
     position: absolute;
-    left: 468px;
-    right: 320px;
+    left: 477px;
+    right: 322px;
     top: 50%;
     margin-top: -5px;
 

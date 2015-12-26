@@ -67,7 +67,7 @@ const musicAppService = function($http, $stateParams) {
 
                     });
 
-                    /*let result = {1112222
+                    /*let result = {
                         cardList: cardList,
                         playList: playlist
                     }
@@ -89,10 +89,11 @@ const musicAppService = function($http, $stateParams) {
 
     let constructedURL = () => {
         let opts = {
-            domainName: $stateParams.playlistId
+            domainName: $stateParams.playlistId,
+            count: 5
         };
 
-        return 'https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain='+opts.domainName+'&count=8&offset=0&callback=JSON_CALLBACK'
+        return 'https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain='+opts.domainName+'&count='+opts.count+'&offset=0&callback=JSON_CALLBACK'
     }
 
 };
