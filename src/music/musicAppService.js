@@ -90,7 +90,7 @@ const musicAppService = function($http, $stateParams) {
     let constructedURL = () => {
         let opts = {
             domainName: $stateParams.playlistId,
-            count: 5
+            count: 8
         };
 
         return 'https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain='+opts.domainName+'&count='+opts.count+'&offset=0&callback=JSON_CALLBACK'

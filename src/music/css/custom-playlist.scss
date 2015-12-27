@@ -1,10 +1,11 @@
 .customPlaylist-wrapper {
+  z-index: 100;
   position: fixed;
   box-sizing: border-box;
   opacity: 0.99;
   top: 0;
   bottom: 60px;
-  right: 70px;
+  right: 0;
   width: 360px;
   background-color: #1f1f1f;
 }
@@ -23,7 +24,7 @@
   position: relative;
   box-sizing: inherit;
   line-height: 58px;
-  margin: 0 16px 12px 16px;
+  margin: 0 10px 12px 10px;
   font-size: 16px;
   text-transform: uppercase;
   color: #eeeeee;
