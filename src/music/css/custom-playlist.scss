@@ -7,7 +7,9 @@
   bottom: 60px;
   right: 0;
   width: 360px;
-  background-color: #1f1f1f;
+  //background-color: #1f1f1f;
+  background-color: #f8f8f8;
+  border-left: 1px solid #6d5f5c;
 }
 
 .customPlaylist-wrapper {
@@ -26,9 +28,11 @@
   line-height: 58px;
   margin: 0 10px 12px 10px;
   font-size: 16px;
+  font-weight: 600;
   text-transform: uppercase;
-  color: #eeeeee;
-  border-bottom: 1px solid #666666;
+  //color: #eeeeee;
+  color: #625351;
+  border-bottom: 1px solid #888888;
 
   .right {
     position: absolute;
@@ -74,6 +78,16 @@
   }
 }
 
+.customPlaylist-title:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background-color: #d8d8d8;
+}
+
 .customPlaylist {
   position: relative;
   box-sizing: inherit;
@@ -86,7 +100,7 @@
     line-height: 32px;
     //padding: 0 16px;
     font-size: 0;
-    color: #888888;
+    color: #666666;
     //border: 1px solid white;
 
     .song-inc-elem {
@@ -94,6 +108,7 @@
       display: inline-block;
       vertical-align: middle;
       font-size: 13px;
+      font-weight: 400;
     }
 
     .btn-play-pause {
@@ -103,7 +118,7 @@
       left: -22px;
       width: 18px;
       height: 18px;
-      fill: #FFFFFF;
+      fill: #9d6a62;
       transform: translateY(-50%);
     }
 
@@ -126,11 +141,11 @@
   }
 
   li.song:hover {
-    color: #FFFFFF;
+    color: #111111;
     cursor: default;
   }
 
   li.song.active {
-    color: #FFFFFF;
+    color: #111111;
   }
 }
