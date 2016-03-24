@@ -19,7 +19,7 @@ module.exports = {
 
     output: {
         path: __dirname + '/public',
-        publicPath: '/public/',
+        publicPath: '/',
         filename: '[name].js'
     },
 
@@ -53,9 +53,12 @@ module.exports = {
     ],
 
     //devtool: NODE_ENV == 'development' ? "cheap-inline-module-source-map" : null,
-    devtool: 'cheap-inline-module-source-map',
+    //devtool: 'cheap-inline-module-source-map',
 
     devServer: {
+        contentBase: __dirname + '/public',
+        host: '0.0.0.0',
+        port: 8080,
         hot: true
     }
 
