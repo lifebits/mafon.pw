@@ -7,6 +7,7 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
 import routing from './app.config';
+import analytics from './app.analytics';
 
 //import mainNav from './ui/main-navigator'; надо переделать
 
@@ -14,6 +15,7 @@ import musicApp from './music';
 
 angular.module('app', [uiRouter, musicApp])
     .config(routing)
+    .run(analytics)
 
     .filter('secondsToDateTime', [function() {
         return function(seconds) {
