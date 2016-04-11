@@ -11,10 +11,12 @@ const musicAppService = function($http, $stateParams) {
             {name: "Life", domainName: "gooddaday"},
             {name: "Overnight", domainName: "nightmelody"},
             {name: "Pop ", domainName: "plmusic"},
-            {name: "Rap", domainName: "rap.lyric"},
+            {name: "Rap", domainName: "rapnewrap"},
             {name: "Rock", domainName: "rock_music_on"},
+            {name: "Rock-2", domainName: "1rock.music"},
             {name: "Soundtrack", domainName: "ostmelody"},
-            {name: "etc", domainName: "topmelody"}
+            {name: "etc", domainName: "mzk"},
+            {name: "18+", domainName: "prayforsex.official"}
         ];
         return domain;
     };
