@@ -22,9 +22,9 @@ const player = function(){
             };
 
             this.aaa = () => {
-                console.log(soundManager.currentPlaying.title);
+                //console.log(soundManager.currentPlaying.title);2222
+                //console.log("111");
             }
-
 
         }
     }

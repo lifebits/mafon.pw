@@ -1,7 +1,6 @@
 'use strict';
 
-import './css/index.scss';
-import './css/animate.scss';
+import './css/main.scss';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
@@ -25,4 +24,3 @@ angular.module('app', [uiRouter, musicApp])
 
     .service('MobileDetectService', require('./mobileDetectService'))
 ;
-
