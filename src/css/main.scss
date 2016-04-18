@@ -1,0 +1,34 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic);
+
+@import "./base/_colors";
+
+@import "./layout/board";
+
+@import "./base/animate";
+
+
+html, body {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background-color: main-color('background');
+}
+
+html::-webkit-scrollbar {
+  width: 0.6em;
+}
+
+html::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #efe9db;
+  outline: 1px solid slategrey;
+}
+
+.column {
+  display: table-cell;
+}

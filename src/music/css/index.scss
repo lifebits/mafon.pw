@@ -2,11 +2,9 @@
   display: table;
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 
-  .column {
-    display: table-cell;
-  }
+
 
   .wrapper-leftSide {
     position: relative;
@@ -23,6 +21,7 @@
   }
 
   .wrapper-player {
+    display: none;
     position: absolute;
     left: 0;
     right: 0;
@@ -32,7 +31,7 @@
 
 }
 
-@import "./css/left-side";
-@import "./css/music-board";
-@import "./css/player";
-@import "./css/custom-playlist";
+@import "layout/left-side";
+@import "layout/music-board";
+@import "layout/player";
+@import "layout/custom-playlist";

@@ -1,0 +1,131 @@
+//@import "";
+
+.music-board {
+
+  ul.grid {
+    box-sizing: border-box;
+    position: relative;
+    width: 98%;
+    margin: 0 auto;
+    padding-bottom: 80px;
+
+    li.grid-item {
+      box-sizing: inherit;
+      position: absolute;
+      width: 25%;
+      min-width: 230px;
+      margin: 10px 0 0;
+      padding: 5px 5px;
+      text-align: left;
+      font-size: 14px;
+      //background-color: #FFFFFF;
+    }
+  }
+
+  .music-card {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    color: #EEEEEE;
+
+    .music-card-img {
+      position: relative;
+      box-sizing: inherit;
+      padding: 5px;
+      margin-bottom: 5px;
+      width: 100%;
+      //height: 300px;
+      background-color: #efe9db;
+
+      img {
+        position: relative;
+        box-sizing: inherit;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        border: 1px solid #333333;
+      }
+    }
+  }
+
+  .playlist {
+    li {
+      position: relative;
+      width: 100%;
+      height: 76px;
+      line-height: 76px;
+      margin-bottom: 5px;
+      font-size: 0;
+      color: #333;
+      background-color: #efe9db;
+
+      .inc {
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+      }
+
+      section.left {
+        .btn-play {
+          margin-left: 10px;
+          line-height: normal;
+          padding: 6px;
+          background-color: #6d5f5c;
+          border-radius: 4px;
+          fill: #efe9db;
+        }
+
+        .btn-play:active {
+          transform: rotate(360deg);
+          //background: #ca1629;
+          border-radius: 50%;
+        }
+
+        .rotate {
+          transition: all 0.5s ease-in-out;
+        }
+        .rotate:active {
+          transition: all 0.8s ease-in-out;
+        }
+      }
+
+      section.center {
+        position: absolute;
+        left: 57px;
+        right: 72px;
+        top: 0;
+        bottom: 0;
+        background-color: cadetblue;
+
+        .info {
+          padding: 0 6px;
+          font-size: 14px;
+          line-height: normal;
+        }
+      }
+
+      section.right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+
+        .duration-song {
+          margin-right: 10px;
+          font-size: 13px;
+        }
+
+        .btn-add-song-in-playlist {
+          line-height: normal;
+          padding: 12px 2px;
+          background-color: #ccbea1;
+          border-radius: 6px 0 0 6px;
+          fill: #333333;
+        }
+      }
+    }
+  }
+
+}
