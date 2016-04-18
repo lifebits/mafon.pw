@@ -3,7 +3,7 @@
         class="grid-item">
         <div class="music-card">
 
-            <div class="music-card-img">
+            <div ng-show="!MusicBoardCards.isMobile" class="music-card-img">
                 <img ng-repeat="photo in card.photo" src="{{ ::photo['photo_604'] }}">
             </div>
 

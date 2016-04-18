@@ -8,16 +8,18 @@ const playList = function(){
         scope: {},
         template: playlistTemplate,
         controllerAs: 'MusicBoardCards',
-        controller: function(MusicAppService) {
+        controller: function(MobileDetectService, MusicAppService) {
 
             MusicAppService.getCardList()
                 .then(
                     result => {
                         this.cardsList = result;
 
-                        console.log(this.cardsList);
+                        //console.log(this.cardsList);
                     }
                 );
+
+            this.isMobile = MobileDetectService.any();
 
         }
     }
