@@ -7,7 +7,7 @@
                 <img ng-repeat="photo in card.photo" src="{{ ::photo['photo_604'] }}">
             </div>
 
-            <ul class="playlist">
+            <ul class="music-card-playlist">
                 <li ng-repeat="song in card.audio">
 
                     <section class="left">
@@ -18,7 +18,7 @@
 
                     <section class="center">
                         <div class="info inc">
-                            {{::song.artist}} - {{::song.title}}
+                            <span ng-click="MusicBoardCards.downloadFile(song.url)">{{::song.artist}} - {{::song.title}}</span>
                         </div>
                     </section>
 

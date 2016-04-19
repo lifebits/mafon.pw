@@ -8,7 +8,7 @@ const playList = function(){
         scope: {},
         template: playlistTemplate,
         controllerAs: 'MusicBoardCards',
-        controller: function(MobileDetectService, MusicAppService) {
+        controller: function(MobileDetectService, MusicAppService, DownloadFileService) {
 
             MusicAppService.getCardList()
                 .then(
@@ -20,6 +20,10 @@ const playList = function(){
                 );
 
             this.isMobile = MobileDetectService.any();
+
+            this.downloadFile = function(url) {
+                DownloadFileService.downloadFile(url);
+            };
 
         }
     }

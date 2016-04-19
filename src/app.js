@@ -23,4 +23,5 @@ angular.module('app', [uiRouter, musicApp])
     }])
 
     .service('MobileDetectService', require('./mobileDetectService'))
+    .service('DownloadFileService', require('./downloadFileService'))
 ;
