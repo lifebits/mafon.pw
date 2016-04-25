@@ -1,6 +1,8 @@
 'use strict';
 
-const musicAppService = function($http, $stateParams) {
+musicAppService.$inject = ['$http', '$stateParams'];
+
+export default function musicAppService($http, $stateParams) {
 
     this.getCardsGroup = () => {
         let domain = [
@@ -25,8 +27,14 @@ const musicAppService = function($http, $stateParams) {
         return getJSONFromVK()
             .then(
                 response => {
-                    let itemsReceived = response.data.response.items;
-                    console.dir(itemsReceived);
+                    let data = response.data;
+
+                    if ("error" in data) {
+                        console.log("Error Code: " + data.error['error_code']);
+                        console.log(data.error['error_msg']);
+                        return false;
+                    }
+                    let itemsReceived = data.response.items;
 
                     let cardList = [];
                     let playlist = [];//????
@@ -85,7 +93,8 @@ const musicAppService = function($http, $stateParams) {
         //https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain=rock_music_on&count=4&offset=0&callback=JSON_CALLBACK
         return $http.jsonp(constructedURL())
             .then(
-                response => response
+                response => response,
+                error => console.log(error)
             )
     };
 
@@ -99,5 +108,3 @@ const musicAppService = function($http, $stateParams) {
     }
 
 };
-
-export default musicAppService;
