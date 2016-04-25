@@ -2,16 +2,10 @@
 
 import musicAppTemplate from './views/music-app.html';
 
-const musicApp = function() {
+export default function() {
     return {
         restrict: 'E',
         scope: {},
-        template: musicAppTemplate,
-        controllerAs: 'MusicApp',
-        controller: function() {
-
-        }
+        template: musicAppTemplate
     }
-};
-
-export default musicApp;
+}

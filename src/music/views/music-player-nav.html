@@ -2,7 +2,7 @@
 
     <sound-manager></sound-manager>
 
-    <div ng-click="PlayerNavigation.aaa()" class="currentSong-icon inc"></div>
+    <div ng-click="$ctrl.aaa()" class="currentSong-icon inc"></div>
     <div class="currentSong-info inc">
         <div class="note">Currently Playing:</div>
         <div>
@@ -53,7 +53,7 @@
         <div class="volumeChange inc">
             <div class="volumeCurrent"></div>
         </div>
-        <a class="btn-playlist inc" ng-click="PlayerNavigation.checkOpenCustomPlaylist()" ng-class="{'active':PlayerNavigation.openCustomPlaylist == true}">
+        <a class="btn-playlist inc" ng-click="$ctrl.checkOpenCustomPlaylist()" ng-class="{'active':$ctrl.openCustomPlaylist == true}">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 24 24"><path d="M7,5V7H21V5M7,13H21V11H7M7,19H21V17H7M4,16.67C3.26,16.67 2.67,17.27 2.67,18C2.67,18.73 3.27,19.33 4,19.33C4.73,19.33 5.33,18.73 5.33,18C5.33,17.27 4.74,16.67 4,16.67M4,4.5A1.5,1.5 0 0,0 2.5,6A1.5,1.5 0 0,0 4,7.5A1.5,1.5 0 0,0 5.5,6A1.5,1.5 0 0,0 4,4.5M4,10.5A1.5,1.5 0 0,0 2.5,12A1.5,1.5 0 0,0 4,13.5A1.5,1.5 0 0,0 5.5,12A1.5,1.5 0 0,0 4,10.5Z" /></svg>
         </a>
 
@@ -61,15 +61,15 @@
 
 
     <!-- CUSTOM PLAYLIST -->
-    <section class="customPlaylist-wrapper animated" ng-show="PlayerNavigation.openCustomPlaylist == true">
+    <section class="customPlaylist-wrapper animated" ng-show="$ctrl.openCustomPlaylist == true">
 
         <div class="customPlaylist-title">
             <span>Custom playlist</span>
             <section class="right">
 
                 <div class="wrapper-btn"
-                     ng-click="PlayerNavigation.checkEditCustomPlaylistState()">
-                    <svg ng-class="{'active':PlayerNavigation.editCustomPlaylistState == true}" viewBox="0 0 24 24">
+                     ng-click="$ctrl.checkEditCustomPlaylistState()">
+                    <svg ng-class="{'active':$ctrl.editCustomPlaylistState == true}" viewBox="0 0 24 24">
                         <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
                     </svg>
                 </div>
@@ -79,7 +79,7 @@
                     </svg>
                 </div>
                 <div class="wrapper-btn btn-customPlaylist-close"
-                    ng-click="PlayerNavigation.checkOpenCustomPlaylist()">
+                    ng-click="$ctrl.checkOpenCustomPlaylist()">
                     <svg viewBox="0 0 24 24">
                         <path d="M17,12L12,17V14H8V10H12V7L17,12M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L5,8.09V15.91L12,19.85L19,15.91V8.09L12,4.15Z" />
                     </svg>
@@ -97,15 +97,19 @@
                          data-play='<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 24 24"><path d="M14,19.14H18V5.14H14M6,19.14H10V5.14H6V19.14Z" /></svg>'
                          data-pause='<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 24 24"><path d="M8,5.14V19.14L19,12.14L8,5.14Z" /></svg>'>
                     </div>
+                    <div class="btn-play-pause"
+                         ng-if="currentPlaying.id !== song.id">
+                        ♫
+                    </div>
 
                     <a play-from-playlist="song">
                         <div class="song-name song-inc-elem">{{::song.artist}} - {{::song.title}}</div>
 
                         <section class="right">
                             <div class="song-inc-elem">
-                                <span ng-if="PlayerNavigation.editCustomPlaylistState == false && currentPlaying.id !== song.id">{{::song.duration | secondsToDateTime | date:'mm:ss'}}</span>
-                                <span ng-if="PlayerNavigation.editCustomPlaylistState == false && currentPlaying.id == song.id">{{currentPostion}}</span>
-                                <span ng-if="PlayerNavigation.editCustomPlaylistState == true" remove-from-playlist="song" data-index="{{$index}}">remove</span>
+                                <span ng-if="$ctrl.editCustomPlaylistState == false && currentPlaying.id !== song.id">{{::song.duration | secondsToDateTime | date:'mm:ss'}}</span>
+                                <span ng-if="$ctrl.editCustomPlaylistState == false && currentPlaying.id == song.id">{{currentPostion}}</span>
+                                <span ng-if="$ctrl.editCustomPlaylistState == true" remove-from-playlist="song" data-index="{{$index}}">remove</span>
                             </div>
                         </section>
                     </a>

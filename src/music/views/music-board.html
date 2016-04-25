@@ -2,7 +2,7 @@
 
     <nav class="mainNav">
         <ul>
-            <li ng-repeat="item in MusicBoard.listPlaylists"
+            <li ng-repeat="item in $ctrl.listPlaylists"
                 ui-sref="music.playlist({playlistId: item.domainName})"
                 ui-sref-active="active">
                 <a>

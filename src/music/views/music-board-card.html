@@ -1,9 +1,9 @@
 <ul isotope-container class="grid">
-    <li isotope-item ng-repeat="card in MusicBoardCards.cardsList"
+    <li isotope-item ng-repeat="card in $ctrl.cardsList"
         class="grid-item">
         <div class="music-card">
 
-            <div ng-show="!MusicBoardCards.isMobile" class="music-card-img">
+            <div ng-show="!$ctrl.isMobile" class="music-card-img">
                 <img ng-repeat="photo in card.photo" src="{{ ::photo['photo_604'] }}">
             </div>
 
@@ -18,7 +18,7 @@
 
                     <section class="center">
                         <div class="info inc">
-                            <span ng-click="MusicBoardCards.downloadFile(song.url)">{{::song.artist}} - {{::song.title}}</span>
+                            <span ng-click="$ctrl.downloadFile(song.url)">{{::song.artist}} - {{::song.title}}</span>
                         </div>
                     </section>
 
