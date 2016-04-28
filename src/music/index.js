@@ -21,7 +21,7 @@ const APP = angular.module('app.music', [uiRouter, angularAnimate, 'iso.directiv
     .component('musicBoardCards', require('./musicBoardCardsComponent'))
     .component('musicPlayerNav', require('./musicPlayerNavComponent'))
 
-    .service('MusicAppService', require('./musicAppService'))
+    .service('MusicBoardService', require('./musicBoardService'))
 
     .name;
 

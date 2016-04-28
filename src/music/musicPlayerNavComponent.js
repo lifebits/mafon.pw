@@ -6,7 +6,7 @@ export default {
     restrict: 'E',
     bindings: {},
     template: playerTemplate,
-    controller: [function() {
+    controller: ['$scope', function($scope) {
         this.openCustomPlaylist = false;
         this.editCustomPlaylistState = false;
 
@@ -19,7 +19,7 @@ export default {
         };
 
         this.aaa = () => {
-            console.log("AAAAAAAAAAAAA");
+            console.log($scope);
         }
     }]
 }

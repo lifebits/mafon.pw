@@ -9,19 +9,35 @@ export default {
     controller: MusicBoardCardsController
 }
 
-function MusicBoardCardsController(MobileDetectService, MusicAppService, DownloadFileService) {
-    MusicAppService.getCardList()
+function MusicBoardCardsController(MobileDetectService, MusicBoardService, DownloadFileService, $scope, $timeout) {
+    MusicBoardService.getCardList()
         .then(
             result => {
                 this.cardsList = result;
             }
         );
 
-    this.isMobile = MobileDetectService.any();
+    this.isMobile = isMobile();
+
+    if ( !isMobile() ) {
+        $timeout(refreshItemsPosition, 2500);
+    }
 
     this.downloadFile = function(url) {
         DownloadFileService.downloadFile(url);
     };
+
+    this.test = () => {
+        console.log($scope);
+    };
+
+    function refreshItemsPosition() {
+        $scope.refresh();
+    }
+
+    function isMobile() {
+        return MobileDetectService.any();
+    }
 }
 
-MusicBoardCardsController.$inject = ['MobileDetectService', 'MusicAppService', 'DownloadFileService'];
+MusicBoardCardsController.$inject = ['MobileDetectService', 'MusicBoardService', 'DownloadFileService', '$scope', '$timeout'];

@@ -6,9 +6,9 @@ export default {
     restrict: 'E',
     bindings: {},
     template: boardTemplate,
-    controller: ['MusicAppService', function (MusicAppService) {
+    controller: ['MusicBoardService', function (MusicBoardService) {
 
-        this.listPlaylists = MusicAppService.getCardsGroup();
+        this.sectionList = MusicBoardService.getSectionList();
 
     }]
 }

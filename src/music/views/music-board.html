@@ -2,11 +2,11 @@
 
     <nav class="mainNav">
         <ul>
-            <li ng-repeat="item in $ctrl.listPlaylists"
-                ui-sref="music.playlist({playlistId: item.domainName})"
+            <li ng-repeat="(key, value) in $ctrl.sectionList"
+                ui-sref="music.playlist({playlistId: key})"
                 ui-sref-active="active">
                 <a>
-                    {{item.name}}
+                    {{::key}}
                 </a>
             </li>
         </ul>

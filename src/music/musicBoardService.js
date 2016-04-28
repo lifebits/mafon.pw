@@ -4,23 +4,22 @@ musicAppService.$inject = ['$http', '$stateParams'];
 
 export default function musicAppService($http, $stateParams) {
 
-    this.getCardsGroup = () => {
-        let domain = [
-            {name: "Exclusive", domainName: "exclusive_muzic"},
-            {name: "Club", domainName: "public_of_music"},
-            {name: "Indie", domainName: "indie_music"},
-            {name: "Instrumental", domainName: "artmelody"},
-            {name: "Life", domainName: "gooddaday"},
-            {name: "Overnight", domainName: "nightmelody"},
-            {name: "Pop ", domainName: "plmusic"},
-            {name: "Rap", domainName: "rapnewrap"},
-            {name: "Rock", domainName: "rock_music_on"},
-            {name: "Rock-2", domainName: "1rock.music"},
-            {name: "Soundtrack", domainName: "ostmelody"},
-            {name: "etc", domainName: "mzk"},
-            {name: "18+", domainName: "prayforsex.official"}
-        ];
-        return domain;
+    this.getSectionList = () => {
+        return {
+            "exclusive": {domainName: "exclusive_muzic"},
+            "club": {domainName: "public_of_music"},
+            "indie": {domainName: "indie_music"},
+            "instrumental": {domainName: "artmelody"},
+            "life": {domainName: "gooddaday"},
+            "overnight": {domainName: "nightmelody"},
+            "pop": {domainName: "plmusic"},
+            "rap": {domainName: "rapnewrap"},
+            "rock": {domainName: "rock_music_on"},
+            "rock-2": {domainName: "1rock.music"},
+            "soundtrack": {domainName: "ostmelody"},
+            "etc": {domainName: "mzk"},
+            "18+": {domainName: "prayforsex.official"}
+        }
     };
 
     this.getCardList = () => {
@@ -100,11 +99,16 @@ export default function musicAppService($http, $stateParams) {
 
     let constructedURL = () => {
         let opts = {
-            domainName: $stateParams.playlistId,
+            domainName: getDomainName(),
             count: 8
         };
-
         return 'https://api.vk.com/method/wall.get?v=5.25&filter=owner&domain='+opts.domainName+'&count='+opts.count+'&offset=0&callback=JSON_CALLBACK'
-    }
+    };
 
+    let getDomainName = () => {
+        let sectionList = this.getSectionList();
+        let currentPlaylist = $stateParams.playlistId;
+
+        return sectionList[currentPlaylist].domainName
+    };
 };
