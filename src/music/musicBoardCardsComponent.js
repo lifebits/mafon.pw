@@ -9,7 +9,7 @@ export default {
     controller: MusicBoardCardsController
 }
 
-function MusicBoardCardsController(MobileDetectService, MusicBoardService, DownloadFileService, $scope, $timeout) {
+function MusicBoardCardsController(MobileDetectService, MusicBoardService, DownloadFileService, $scope) {
     MusicBoardService.getCardList()
         .then(
             result => {
@@ -17,10 +17,10 @@ function MusicBoardCardsController(MobileDetectService, MusicBoardService, Downl
             }
         );
 
-    this.isMobile = isMobile();
+    this.isMobile = MobileDetectService.any();
 
-    if ( !isMobile() ) {
-        $timeout(refreshItemsPosition, 2500);
+    if ( !this.isMobile ) {
+        setTimeout(refreshItemsPosition, 2500);
     }
 
     this.downloadFile = function(url) {
@@ -34,10 +34,6 @@ function MusicBoardCardsController(MobileDetectService, MusicBoardService, Downl
     function refreshItemsPosition() {
         $scope.refresh();
     }
-
-    function isMobile() {
-        return MobileDetectService.any();
-    }
 }
 
-MusicBoardCardsController.$inject = ['MobileDetectService', 'MusicBoardService', 'DownloadFileService', '$scope', '$timeout'];
+MusicBoardCardsController.$inject = ['MobileDetectService', 'MusicBoardService', 'DownloadFileService', '$scope'];
