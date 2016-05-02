@@ -1,6 +1,6 @@
 <section class="board music-board">
 
-    <nav class="mainNav">
+    <nav class="mainNav" ng-show="$ctrl.mainNavOpenCloseState">
         <ul>
             <li ng-repeat="(key, value) in $ctrl.sectionList"
                 ui-sref="music.playlist({playlistId: key})"
@@ -12,6 +12,8 @@
         </ul>
     </nav>
 
-    <ui-view></ui-view>
+    <section ui-view class="">
+
+    </section>
 
 </section>

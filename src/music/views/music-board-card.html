@@ -1,9 +1,13 @@
+<section>
+    <current-section-name-viewer/>
+</section>
+
 <ul isotope-container class="grid">
     <li isotope-item ng-repeat="card in $ctrl.cardsList"
         class="grid-item">
         <div class="music-card">
 
-            <div ng-show="!$ctrl.isMobile" class="music-card-img">
+            <div ng-click="$ctrl.test()" ng-show="!$ctrl.isMobile" class="music-card-img">
                 <img ng-repeat="photo in card.photo" src="{{ ::photo['photo_604'] }}">
             </div>
 
