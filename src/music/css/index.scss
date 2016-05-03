@@ -1,10 +1,8 @@
 #music-app {
-  display: table;
+  display: table;//?
   position: relative;
   width: 100%;
-  height: 100vh;
-
-
+  min-height: 100vh;
 
   .wrapper-leftSide {
     position: relative;
@@ -21,17 +19,15 @@
   }
 
   .wrapper-player {
-    display: none;
-    position: absolute;
+    display: block;
+    position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
-    //height: 60px;
   }
 
 }
 
-@import "layout/left-side";
 @import "layout/music-board";
-@import "layout/player";
+@import "layout/music-player";
 @import "layout/custom-playlist";

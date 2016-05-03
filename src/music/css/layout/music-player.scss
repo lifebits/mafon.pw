@@ -1,20 +1,24 @@
-.player-nav {
-  //position: relative;
+@import "../../../css/base/colors";
+@import "../../../css/base/media";
+
+nav.music-player {
+  box-sizing: border-box;
+  position: relative;
   width: 100%;
   height: 60px;
   line-height: 60px;
-  background-color: #121315;
-  color: #fefefe;
+  background-color: main-color('background', 'dark');
+  color: main-color('font', 'light');
   font-size: 0;
 
   a svg {
     width: 26px;
     height: 26px;
-    fill: #c1c1c1;
+    fill: main-color('primary');
   }
 
   a.active svg {
-    fill: #70c7d8;
+    fill: main-color('secondary', 'light');
   }
 
   .right-section {
@@ -35,7 +39,7 @@
   .currentSong-icon {
     width: 40px;
     height: 40px;
-    background-color: #70c7d8;
+    background-color: main-color('primary');
   }
 
   .currentSong-info {
@@ -66,7 +70,6 @@
     .play svg {
       width: 42px;
       height: 42px;
-      fill: #EEEEEE;
     }
 
     .next-prev {
@@ -90,14 +93,14 @@
     .seekBase {
       height: 10px;
       width: 100%;
-      background-color: #2f2f2f;
+      background-color: main-color('background', 'light');
       border-radius: 4px;
     }
 
     .seekLoad {
       height: 12px;
       width: 0;
-      background-color: #ca1629;
+      background-color: main-color('tertiary');
       border-radius: 4px;
     }
   }
@@ -114,14 +117,14 @@
   .volumeChange {
     height: 10px;
     width: 120px;
-    background-color: #2f2f2f;
+    background-color: main-color('background', 'light');
     border-radius: 4px;
   }
 
   .volumeCurrent {
     height: 100%;
     width: 50%;
-    background-color: #70c7d8;
+    background-color: main-color('secondary', 'light');
     border-radius: 4px;
   }
 
