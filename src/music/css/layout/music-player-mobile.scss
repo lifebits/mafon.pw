@@ -1,0 +1,109 @@
+@import "../../../css/base/colors";
+
+.music-player-mobile {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  min-height: 60px;
+  //line-height: 60px;
+  background-color: main-color('background', 'dark');
+  color: main-color('font', 'light');
+  //font-size: 0;
+
+  a svg {
+    width: 26px;
+    height: 26px;
+    fill: main-color('primary');
+  }
+
+  a.active svg {
+    fill: main-color('secondary', 'light');
+  }
+
+  a.btn-currentPlaylist {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .currentSong-timeLine {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+
+    .seekBase {
+      height: 8px;
+      width: 100%;
+      background-color: main-color('background', 'light');
+    }
+
+    .seekLoad {
+      height: 10px;
+      width: 0;
+      background-color: main-color('primary');
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+
+  .currentSong-info {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    //height: 40px;
+    padding: 4px 8px;
+    font-size: 14px;
+    color: main-color('font', 'light');
+    background-color: main-color('background', 'base');
+
+    span {
+      display: block;
+      width: 80%;
+      line-height: 18px;
+    }
+  }
+
+  .mainNav {
+    display: inline-block;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    background-color: main-color('background', 'dark');
+
+    a {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+
+      & svg {
+        width: 2em;
+        height: 2em;
+      }
+    }
+
+    .play {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 8px;
+      line-height: normal;
+
+      & svg {
+        width: 4em;
+        height: 4em;
+      }
+    }
+
+    .btn-repeat {
+      right: 20px;
+    }
+
+    .btn-mute {
+      left: 20px;
+    }
+  }
+
+}

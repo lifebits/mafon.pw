@@ -6,7 +6,7 @@ export default {
     restrict: 'E',
     bindings: {},
     template: playerTemplate,
-    controller: ['$scope', function($scope) {
+    controller: ['MobileDetectService', '$scope', function(MobileDetectService, $scope) {
         this.openCustomPlaylist = false;
         this.editCustomPlaylistState = false;
 
@@ -17,6 +17,8 @@ export default {
         this.checkEditCustomPlaylistState = () => {
             this.editCustomPlaylistState = ( this.editCustomPlaylistState == false ) ? true : false;
         };
+
+        this.isMobile = MobileDetectService.any();
 
         this.aaa = () => {
             console.log($scope);
