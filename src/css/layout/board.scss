@@ -2,9 +2,11 @@
 @import "../base/media";
 
 .board {
+  overflow: hidden;
   position: relative;
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
+  white-space: nowrap;
 
   nav.mainNav {
     position: relative;
@@ -14,49 +16,92 @@
     line-height: 60px;
     font-size: 0;
 
+    @include mobile {
+      display: inline-block;
+      width: 68%;
+      height: 100vh;
+    }
+
     ul {
       box-sizing: border-box;
       height: inherit;
       line-height: inherit;
       border-bottom: 2px solid main-color('font');
+
+      li {
+        display: inline-block;
+        box-sizing: border-box;
+        position: relative;
+        padding: 0 10px;
+        height: inherit;
+        line-height: inherit;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: center;
+        color: main-color('font');
+        border-bottom: 2px solid main-color('font');
+
+        &.active {
+          color: main-color('font', 'light');
+          border-color: main-color('tertiary');
+        }
+
+        &.active:after {
+          content: '';
+          z-index: 0;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          margin-left: -6px;
+          width: 0;
+          height: 0;
+          border: 6px solid transparent;
+          border-bottom-color: main-color('tertiary');
+        }
+
+        &:hover {
+          cursor: default;
+          border-color: main-color('tertiary');
+        }
+      }
     }
 
-    li {
+    @include mobile {
+      ul {
+        border: none;
+        padding-top: 44px;
+        padding-left: 20px;
+
+        li {
+          display: block;
+          height: 30px;
+          line-height: 30px;
+          font-size: 16px;
+          font-weight: 400;
+          text-transform: capitalize;
+          text-align: left;
+          border: none;
+
+          &.active:after {
+            border: none;
+          }
+        }
+      }
+    }
+
+  }
+
+  .wrap-board-card {
+    position: relative;
+    width: 100%;
+
+    &.passive {
+      overflow: hidden;
       display: inline-block;
-      box-sizing: border-box;
-      position: relative;
-      padding: 0 10px;
-      height: inherit;
-      line-height: inherit;
-      font-size: 16px;
-      font-weight: 600;
-      text-transform: uppercase;
-      text-align: center;
-      color: main-color('font');
-      border-bottom: 2px solid main-color('font');
-
-      &.active {
-        color: main-color('font', 'light');
-        border-color: main-color('tertiary');
-      }
-
-      &.active:after {
-        content: '';
-        z-index: 0;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        margin-left: -6px;
-        width: 0;
-        height: 0;
-        border: 6px solid transparent;
-        border-bottom-color: main-color('tertiary');
-      }
-
-      &:hover {
-        cursor: default;
-        border-color: main-color('tertiary');
-      }
+      vertical-align: top;
+      height: 100vh;
+      transform: scale(.86);
     }
   }
 }
