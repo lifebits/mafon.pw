@@ -13,6 +13,6 @@ export default function routing($stateProvider, $urlRouterProvider) {
             template: ''
         });
     */
-    $urlRouterProvider.otherwise('music');
+    $urlRouterProvider.otherwise('/music');
 
 }

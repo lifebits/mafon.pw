@@ -11,6 +11,14 @@ nav.music-player {
   color: main-color('font', 'light');
   font-size: 0;
 
+  .inc {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    margin-left: 14px;
+  }
+
   a svg {
     width: 26px;
     height: 26px;
@@ -19,21 +27,6 @@ nav.music-player {
 
   a.active svg {
     fill: main-color('secondary', 'light');
-  }
-
-  .right-section {
-    position: absolute;
-    top: 0;
-    right: 14px;
-    bottom: 0;
-  }
-
-  .inc {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-    margin-left: 14px;
   }
 
   .currentSong-icon {
@@ -105,27 +98,31 @@ nav.music-player {
     }
   }
 
-  .currentSong-duration {
-    font-size: 13px;
-    line-height: normal;
-  }
+  .right-section {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    bottom: 0;
 
-  .btn-playlist {
+    .currentSong-duration {
+      font-size: 13px;
+      line-height: normal;
+    }
 
-  }
+    .volumeChange {
+      height: 10px;
+      width: 120px;
+      background-color: main-color('background', 'light');
+      border-radius: 4px;
 
-  .volumeChange {
-    height: 10px;
-    width: 120px;
-    background-color: main-color('background', 'light');
-    border-radius: 4px;
-  }
+      .volumeCurrent {
+        height: 100%;
+        width: 50%;
+        background-color: main-color('secondary', 'light');
+        border-radius: 4px;
+      }
+    }
 
-  .volumeCurrent {
-    height: 100%;
-    width: 50%;
-    background-color: main-color('secondary', 'light');
-    border-radius: 4px;
   }
 
 }

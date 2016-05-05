@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic);
 
-@import "./base/_colors";
+@import "./base/colors";
 
 @import "./layout/board";
 
@@ -17,7 +17,7 @@ html, body {
 }
 
 html::-webkit-scrollbar {
-  width: 0.6em;
+  width: 0.5em;
 }
 
 html::-webkit-scrollbar-track {
@@ -26,7 +26,7 @@ html::-webkit-scrollbar-track {
 
 html::-webkit-scrollbar-thumb {
   background-color: #efe9db;
-  outline: 1px solid slategrey;
+  outline: 1px solid main-color('primary');
 }
 
 .column {
