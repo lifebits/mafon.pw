@@ -50,6 +50,10 @@ export default function musicAppService($http, $stateParams) {
                             newItem.id = item.id;
                             newItem.date = item.date;
 
+                            if (prop == "likes") {
+                                newItem[prop] = item[prop];
+                            }
+
                             if (prop == "attachments") {
 
                                 let attachmentsElem = item[prop];
